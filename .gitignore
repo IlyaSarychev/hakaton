@@ -1,0 +1,5 @@
+/.venv/
+/backend/db.sqlite3
+**/__pycache__/
+.idea/workspace.xml
+.idea/tasks.xml
