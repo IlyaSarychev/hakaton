@@ -1,12 +1,12 @@
 <template>
-   <ul class="navbar" id="navbar">
+   <ul class="navbar" id="navbar-view">
      <li><router-link to="/logout">logout</router-link></li>
    </ul>
  </template>
  
  <script>
  export default {
-   name: 'navbar',
+   name: 'navbar-view',
  };
  </script>
  

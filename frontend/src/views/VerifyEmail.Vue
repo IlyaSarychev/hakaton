@@ -20,6 +20,7 @@ import {
 } from 'vuex'
 
 export default {
+   name: 'activate-account-view',
    computed: {
       ...mapGetters('auth', ['isAuthenticated']),
       ...mapState('signup', [

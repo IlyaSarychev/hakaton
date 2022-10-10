@@ -7,7 +7,8 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Navbar from './components/Navbar';
+import Navbar from '@/components/Navbar.vue'
+
 export default {
   name: 'app',
   components: {

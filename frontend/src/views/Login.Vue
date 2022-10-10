@@ -16,6 +16,7 @@
 
 <script>
 export default {
+   name: 'login-view',
    data() {
       return {
          inputs: {

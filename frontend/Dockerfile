@@ -9,11 +9,11 @@ WORKDIR $DIST_DIR
 
 COPY ${SOURCE_DIR}/package*.json ${DIST_DIR}/
 
-RUN npm install
+RUN yarn install
 
 COPY ${SOURCE_DIR}/ ${DIST_DIR}/
 
-RUN npm run build
+RUN yarn run
 
 EXPOSE 8080
 CMD [ "http-server", "dist" ]

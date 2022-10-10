@@ -1,11 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-
-import Home from '../views/Home';
-import Login from '../views/Login';
-import Lost from '../views/Lost';
-import Register from '../views/Register';
-import VerifyEmail from '../views/VerifyEmail';
+import Home from '@/views/Home'
+import Login from '@/views/Login';
+import Lost from '@/views/Lost';
+import Register from '@/views/Register';
+import VerifyEmail from '@/views/VerifyEmail';
 
 import store from '../store';
 
@@ -41,13 +40,13 @@ Vue.use(Router);
 export default new Router({
     saveScrollPosition: true,
     routes: [{
-            path: '/',
-            redirect: '/home',
-        },
-        {
             path: '/home',
             component: Home,
             beforeEnter: requireAuthenticated,
+        },
+        {
+            path: '/',
+            redirect: '/home',
         },
         {
             path: '/register',
@@ -68,7 +67,7 @@ export default new Router({
         },
         {
             path: '*',
-            component: Lost,
+            component: Lost
         },
     ],
 });

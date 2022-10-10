@@ -45,6 +45,7 @@
 import { mapActions, mapState } from 'vuex'
 
 export default {
+   name: 'register-view',
    data() {
       return {
          inputs: {
