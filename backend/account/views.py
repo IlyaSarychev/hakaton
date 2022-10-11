@@ -1,8 +1,9 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, logout
 from rest_framework import generics
 from rest_framework import views
 from rest_framework import permissions
 from rest_framework.response import Response
+from rest_framework import status
 
 from .models import ContractorAccount, User, CustomerAccount
 from .serializers import ContractorAccountSerializer, LoginSerializer, UserSerializer, CustomerAccountSerializer
@@ -26,6 +27,14 @@ class LoginApiView(views.APIView):
         if serializer.is_valid(raise_exception=True):
             authenticate(email=serializer.data.get("email"), password=serializer.data.get("password"))
         return Response({"success": True})
+
+
+class LogoutAPIView(views.APIView):
+    def post(self, request, *args, **kwargs):
+        if hasattr(request, "user"):
+            logout(request)
+            return Response(status=status.HTTP_200_OK)
+        return Response({"error": ""}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UserRetrieveUpdateDeleteAPIView(generics.RetrieveUpdateDestroyAPIView):
