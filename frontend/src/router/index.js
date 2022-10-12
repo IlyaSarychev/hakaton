@@ -5,6 +5,7 @@ import Login from '@/views/Login';
 import Lost from '@/views/Lost';
 import Register from '@/views/Register';
 import VerifyEmail from '@/views/VerifyEmail';
+import Table from '@/views/Table';
 
 import store from '../store';
 
@@ -64,6 +65,11 @@ export default new Router({
         {
             path: '/logout',
             beforeEnter: redirectLogout,
+        },
+        {
+            path: '/table',
+            component: Table,
+            beforeEnter: requireUnauthenticated,
         },
         {
             path: '*',
